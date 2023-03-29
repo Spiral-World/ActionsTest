@@ -27,7 +27,8 @@ jobs:
           yarn add eslint 
           yarn add jest 
       - name: Start lint 
-        run: 
-          yarn eslint 
+        run: yarn eslint 
       - name: Start jest
         run: yarn jest
+      - name: Start yarn build
+        run: yarn build
