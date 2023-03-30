@@ -9,7 +9,7 @@ on:
 jobs: 
   test: 
     name: Lint & Run Jest
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       matrix:
         node_version: [16] 
@@ -22,7 +22,6 @@ jobs:
           node-version: ${{ matrix.node_version }}
       - name: Install Dependencies / Check if Lint is installed / Check if Jest is installed 
         run: |
-          sudo npm install -g yarn
           yarn 
           yarn add eslint 
           yarn add jest 
