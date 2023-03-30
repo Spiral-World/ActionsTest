@@ -8,4 +8,4 @@ RUN yarn
 
 RUN tsc
 
-ENTRYPOINT ["node", "./dist/server/server.js"]
+ENTRYPOINT ["node", "./dist/server.js"]
