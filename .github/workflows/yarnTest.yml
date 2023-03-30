@@ -3,7 +3,7 @@ on: [push]
 jobs: 
   Lint-Test-Build-Application: 
     name: Lint & Run Jest
-    runs-on: levan 
+    runs-on: self-hosted 
     steps: 
       - name: Check out repository code
         uses: actions/checkout@v3
