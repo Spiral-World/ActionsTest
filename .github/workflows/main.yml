@@ -1,25 +1,11 @@
-name: CI 
-on: 
-  push: 
-    branches:
-      - master
-  pull_request: 
-      branches: 
-        - master 
+on: [push]
 jobs: 
   test: 
     name: Lint & Run Jest
     runs-on: self-hosted
-    strategy:
-      matrix:
-        node_version: [16] 
     steps: 
       - name: Checkout the Git repository
         uses: actions/checkout@v2 
-      - name: Setup Node.js 
-        uses: actions/setup-node@v2 
-        with: 
-          node-version: ${{ matrix.node_version }}
       - name: Install Dependencies / Check if Lint is installed / Check if Jest is installed 
         run: |
           npm install
