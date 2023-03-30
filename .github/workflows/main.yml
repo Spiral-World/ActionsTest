@@ -22,7 +22,7 @@ jobs:
           node-version: ${{ matrix.node_version }}
       - name: Install Dependencies / Check if Lint is installed / Check if Jest is installed 
         run: |
-          sudo npm install -g yarn
+          sudo npm install --global yarn
           yarn 
           yarn add eslint 
           yarn add jest 
