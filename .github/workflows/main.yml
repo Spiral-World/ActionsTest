@@ -1,33 +1,17 @@
 name: RatInk 
-on: 
-  push: 
-    branches:
-      - master
-  pull_request: 
-      branches: 
-        - master 
+on: [push]
 jobs: 
-  test: 
+  Lint-Test-Build-Application: 
     name: Lint & Run Jest
-    runs-on: self-hosted
-    strategy:
-      matrix:
-        node_version: [16] 
+    runs-on: levan 
     steps: 
-      - name: Checkout the Git repository
-        uses: actions/checkout@v2 
-      - name: Setup Node.js 
-        uses: actions/setup-node@v2 
-        with: 
-          node-version: ${{ matrix.node_version }}
-      - name: Install Dependencies / Check if Lint is installed / Check if Jest is installed 
-        run: |
-          yarn 
-          yarn add eslint 
-          yarn add jest 
-      - name: Start lint 
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: 📦 Install Dependencies 
+        run: yarn install
+      - name: 🧪 Lint Code 
         run: yarn eslint 
-      - name: Start jest
+      - name: 💉 Test Code
         run: yarn jest
-      - name: Start yarn build
+      - name: 📦 Build Application
         run: yarn build
