@@ -9,7 +9,6 @@ jobs:
       - name: 📦 Install Dependencies 
         run: | 
           yarn install
-          yarn
           yarn add eslint 
           yarn add jest
       - name: 🧪 Lint Code 
