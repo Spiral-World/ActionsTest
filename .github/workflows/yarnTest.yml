@@ -19,6 +19,9 @@ jobs:
       - name: 📦 Build Application
         run: yarn build
 
+      - name: Build Docker image
+        uses: docker build . -t dominicstreit/james
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
