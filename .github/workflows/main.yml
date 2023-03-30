@@ -22,15 +22,15 @@ jobs:
           node-version: ${{ matrix.node_version }}
       - name: Install Dependencies / Check if Lint is installed / Check if Jest is installed 
         run: |
-          yarn 
-          yarn add eslint 
-          yarn add jest 
+          npm 
+          v add eslint 
+          npm add jest 
       - name: Start lint 
-        run: yarn eslint 
+        run: npm eslint 
       - name: Start jest
-        run: yarn jest
+        run: npm jest
       - name: Start yarn build
-        run: yarn build
+        run: npm build
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
