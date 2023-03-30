@@ -1,0 +1,20 @@
+on: [push]
+jobs: 
+  Lint-Test-Build-Application: 
+    name: Lint & Run Jest
+    runs-on: self-hosted 
+    steps: 
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: 📦 Install Dependencies 
+        run: | 
+          yarn install
+          yarn
+          yarn add eslint 
+          yarn add jest
+      - name: 🧪 Lint Code 
+        run: yarn eslint 
+      - name: 💉 Test Code
+        run: yarn jest
+      - name: 📦 Build Application
+        run: yarn build
