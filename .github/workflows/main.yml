@@ -26,9 +26,9 @@ jobs:
           npm add eslint 
           npm add jest 
       - name: Start lint 
-        run: npm eslint 
+        run: npm lint 
       - name: Start jest
-        run: npm jest
+        run: npm test
       - name: Start yarn build
         run: npm build
 
