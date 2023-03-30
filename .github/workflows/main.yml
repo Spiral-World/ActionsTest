@@ -9,7 +9,8 @@ on:
 jobs: 
   test: 
     name: Lint & Run Jest
-    runs-on: ubuntu-latest
+    runs-on: 
+      labels: levan
     strategy:
       matrix:
         node_version: [16] 
