@@ -6,6 +6,6 @@ COPY . .
 
 RUN yarn
 
-RUN tsc
+RUN ./node_modules/.bin/tsc
 
 ENTRYPOINT ["node", "./build/index.js"]
