@@ -22,8 +22,8 @@ jobs:
           node-version: ${{ matrix.node_version }}
       - name: Install Dependencies / Check if Lint is installed / Check if Jest is installed 
         run: |
-          npm 
-          v add eslint 
+          npm install
+          npm add eslint 
           npm add jest 
       - name: Start lint 
         run: npm eslint 
