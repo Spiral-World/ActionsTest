@@ -1,5 +1,7 @@
 name: Yarn strting
-on: [push]
+on:
+  pull_request:
+    types: [ assigned, opened, synchronize, reopened ]
 jobs: 
   Lint-Test-Build-Application: 
     name: Lint & Run Jest
@@ -21,7 +23,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: dominicstreit/app:latest
+          tags: mat112800/app:latest
           
       - name: 📦 Install Dependencies 
         run: | 
