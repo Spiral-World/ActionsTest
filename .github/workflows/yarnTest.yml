@@ -21,7 +21,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: dominicstreit/app:latest
+          tags: mat112800/app:latest
           
       - name: 📦 Install Dependencies 
         run: | 
